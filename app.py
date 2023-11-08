@@ -28,13 +28,12 @@ def send_email(subject, recipients, text_body, html_body=None):
 @app.route('/send_emails',methods=['POST'])
 def send_emails():
     data=request.get_json();
-    recipients = [data['email']]
+    recipients = [data['email'],'devesh1217@yahoo.com']
     subject = 'Contact Form details from Devesh Mehta'
     text_body = 'Dear '+data['name']+',Thanks for contacting me.'
     html_body = '<div style="font-size: 20px;"><div>Dear '+data['name']+',</div><p>     \tThanks for contacting me. I hope you would liked my portfolio. Details regarding contact form is given here. I\'ll contact you soon regarding the same.</p><table cellspacing="20px"><tr><td>Name:</td><td>'+data['name']+'</td></tr><tr><td>Organization:</td><td>'+data['org']+'</td></tr><tr><td>Email:</td><td>'+data['email']+'</td></tr><tr><td>Phone:</td><td>'+data['phone']+'</td></tr><tr><td>Query:</td><td>'+data['msg']+'</td></tr></table><p>I\'ll try to reply as soon as possible. Again thanks to visit my portfolio website.</p><div>Devesh Chetan Mehta</div></div>'
     # table='<table cellspacing="20px"><tr><td>Name:</td><td>'+data['name']+'</td></tr><tr><td>Organization:</td><td>'+data['org']+'</td></tr><tr><td>Email:</td><td>'+data['email']+'</td></tr><tr><td>Phone:</td><td>'+data['phone']+'</td></tr><tr><td>Query:</td><td>'+data['msg']+'</td></tr></table>'
 
     send_email(subject, recipients, text_body, html_body)
-    send_email('Portfolio Form Detail', 'devesh1217@yahoo.com', text_body, html_body)
     
     return jsonify(data)
