@@ -35,6 +35,6 @@ def send_emails():
     # table='<table cellspacing="20px"><tr><td>Name:</td><td>'+data['name']+'</td></tr><tr><td>Organization:</td><td>'+data['org']+'</td></tr><tr><td>Email:</td><td>'+data['email']+'</td></tr><tr><td>Phone:</td><td>'+data['phone']+'</td></tr><tr><td>Query:</td><td>'+data['msg']+'</td></tr></table>'
 
     send_email(subject, recipients, text_body, html_body)
-    # send_email('Portfolio Form Detail', 'devesh1217@yahoo.com', text_body, table)
+    send_email('Portfolio Form Detail', 'devesh1217@yahoo.com', text_body, html_body)
     
     return jsonify(data)
