@@ -25,7 +25,7 @@ def send_email(subject, recipients, text_body, html_body=None):
         msg.html = html_body
     mail.send(msg)
 
-@app.route('/send_emails')
+@app.route('/send_emails',methods=['POST'])
 def send_emails():
     data=request.get_json();
     recipients = [data['email']]
