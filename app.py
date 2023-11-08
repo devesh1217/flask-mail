@@ -1,4 +1,4 @@
-from flask import Flask,request
+from flask import Flask,request,jsonify
 from flask_mail import Mail, Message
 from flask_cors import CORS
 app=Flask(__name__)
@@ -35,4 +35,4 @@ def send_emails():
     
     send_email(subject, recipients, text_body, html_body)
     
-    return 
+    return jsonify(data)
