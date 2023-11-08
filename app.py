@@ -34,7 +34,3 @@ def send_emails():
     send_email(subject, recipients, text_body, html_body)
     
     return 
-
-
-if __name__ == '__main__':
-    app.run()
