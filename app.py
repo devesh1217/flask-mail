@@ -26,10 +26,10 @@ def send_email(subject, recipients, text_body, html_body=None):
 @app.route('/send_emails')
 def send_emails():
     data=request.get_json();
-    recipients = [data]
+    recipients = [data['email']]
     subject = 'Dear '+data['name']+', Thanks to conatact.'
     text_body = 'This is a test email from Flask-Mail.'
-    html_body = '<p>Dear '+data['name']+', Thanks to conatact.<br><h1>Devesh</h1></p>'
+    html_body = '<p>Dear '+data['name']+', Thanks to conatact.<br><h1>Devesh</h1></p><p>'+data['msg']+'</p>'
     
     send_email(subject, recipients, text_body, html_body)
     
